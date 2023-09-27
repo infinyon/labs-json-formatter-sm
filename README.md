@@ -39,7 +39,9 @@ Each row is an individual JSON record:
 The transformation spec covers 2 cases:
 * `match`: a list of formatting rules associated with a match condition.
 * `default`: a default formatter without a matching rule. 
-The default formatter is required and can be used with or without the `match` section.  If used together, the matching statement is checked first, and default is applied if no matching record is found.
+
+The default formatter is required and can be used with or without the `match` section.
+If used together, the matching statement is checked first, and default is applied if no matching record is found.
  
 
 In this example, we'll use the following transformation spec:
