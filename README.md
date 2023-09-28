@@ -77,7 +77,7 @@ spec:
       output: "/formatted"
 ```
 
-NOTE: The JSON object references for look-up and output must be in [JSON Pointer](https://datatracker.ietf.org/doc/html/rfc6901) notation.
+NOTE: The JSON object references for look-up and output must be in [JSON Pointer] notation.
 
 ### Output Records
 
@@ -168,3 +168,4 @@ cargo test
 
 
 [map]: https://www.fluvio.io/smartmodules/transform/map/
+[JSON Pointer]: https://datatracker.ietf.org/doc/html/rfc6901
