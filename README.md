@@ -75,8 +75,9 @@ spec:
         - "/name"
         - "/email"
       output: "/formatted"
-
 ```
+
+NOTE: References to JSON values must be in [JSON Pointer](https://datatracker.ietf.org/doc/html/rfc6901) notation
 
 ### Output Records
 
@@ -150,7 +151,7 @@ A second default-only `transforms-default.yaml` file is also available:
 smdk test --file ./test-data/input.txt  --transforms-file ./test-data/transform-default.yaml
 ```
 
-Note that the 2 configuration files will yield different results.
+NOTE: Changing the parameters inside the `transforms` files yield different results.
 
 
 ### Cargo Compatible
