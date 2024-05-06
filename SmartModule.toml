@@ -1,7 +1,7 @@
 [package]
 name = "json-formatter"
 group = "infinyon-labs"
-version = "0.1.0"
+version = "0.1.3"
 apiVersion = "0.1.0"
 description = "Read fields in a JSON record and generates a formatted string"
 license = "Apache-2.0"

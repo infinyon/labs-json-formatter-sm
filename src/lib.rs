@@ -6,6 +6,7 @@ use serde::{Serialize, Deserialize};
 use serde_json::Value;
 use json_value_merge::Merge;
 use dyn_fmt::AsStrFormatExt;
+// use chrono::{TimeZone, Utc};
 
 use fluvio_smartmodule::{
     smartmodule, Result, SmartModuleRecord, RecordData,
@@ -74,7 +75,7 @@ fn process_format(mut v: Value, format: &Format) -> Result<String> {
 ///  - format has higher precedence than switch.
 fn process_record(data: &str, params: &Params) -> Result<String> {
     let v:Value = serde_json::from_str(data)?;
-
+    
     if let Some(_match) = &params._match {
         for m in _match.iter() {
             if let Some(val) = v.pointer(&m.key) {
@@ -94,6 +95,11 @@ pub fn map(record: &SmartModuleRecord) -> Result<(Option<RecordData>, RecordData
     let key = record.key.clone();
     let data = std::str::from_utf8(record.value.as_ref())?;
     let params = PARAMS.get().wrap_err("params not initialized")?;
+
+    /*
+    let time_str = Utc.timestamp_millis_opt(record.timestamp() as i64).unwrap();
+    println!("TS: {}", time_str);
+    */
 
     let result = process_record(data, params)?;
 
